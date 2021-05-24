@@ -1,0 +1,388 @@
+
+			body{
+				background-color: #fafafa;
+				margin: 0rem;
+			}
+
+			.navigation{
+				list-style-type: none;
+				background-color: #707070;
+			}
+			.navigation div {
+				justify-content: center;
+			}
+			.navigation a {
+				color: white;
+			}
+			
+			.text{
+				text-align: center;
+				font-family:  "Manrope";
+			}
+
+			.text_cv{
+				text-align: left;
+				font-family:  "Manrope";
+			}
+
+			.btn_rs{
+				border-radius: 20px;
+    			margin-top: 30px;
+   				box-shadow: 0px 1px hsl(0deg 0% 0% / 15%);
+    			FONT-WEIGHT: BOLD;
+    			border: solid #c7c7c7 1px;
+				background-color: white;
+				padding: 0.75rem 0.75rem;
+				max-height: fit-content;
+    			max-width: fit-content;
+    			object-fit: contain;
+			}
+
+			.btn_command{
+				border-radius: 20px;
+    			margin-top: 30px;
+    			box-shadow: 0px 1px hsl(0deg 0% 0% / 15%);
+    			FONT-WEIGHT: BOLD;
+    			border: solid #c7c7c7 1px;
+				padding: 0.75rem 0.75rem;
+				background-color: #ffffff;
+				color: #212529;
+			}
+
+			.btn_cart{
+				border-radius: 20px;
+    			margin-top: 30px;
+    			box-shadow: 0px 1px hsl(0deg 0% 0% / 15%);
+    			FONT-WEIGHT: BOLD;
+    			border: solid #c7c7c7 1px;
+				padding: 0.75rem 0.75rem;
+				background-color: #ffffff;
+				color: #212529;
+			}
+
+			.cartedv{
+				display: block;
+  				margin-left: auto;
+  				margin-right: auto;
+			}
+
+			.carteanim{
+				display: block;
+  				margin-left: auto;
+  				margin-right: auto;
+			}
+			.cara_carte{
+				margin-left: 10rem;
+				margin-top: 5rem;
+
+			}
+
+			.carousel{
+				height: 300px;
+			}
+
+			.content1{
+				margin-bottom: 7rem;
+			}
+
+			.content1 p {
+				text-align: center;
+			}
+			.content1 a {
+				text-decoration: none;
+			}
+
+			.content2 {
+				background-color: black;
+				color: white;
+				padding-bottom: 3rem;
+			}
+
+			.content2 p {
+				text-align: center;
+			}
+			.content2 a {
+				text-decoration: none;
+			}
+
+			.content3{
+				background-color: black;
+				padding-bottom: 3rem;
+				color: white;
+			}
+			.content4{
+				padding-bottom: 3rem;
+			}
+
+			.name_form{
+				margin-top: 2rem;
+			}
+
+			.nav-link {
+    		font-family: "Manrope";
+			}
+			
+			.form_edit{
+				margin-top: 4rem;
+				margin-bottom: 4rem;
+			}
+
+			.form-label{
+				font-weight: bold;
+			}
+
+			.form-controledit{
+				border-radius: 30px;
+				padding: 1rem 1.35rem;
+				width: 100%;
+				border: 1px solid #ced4da;
+			}
+
+			.form_contact{
+				margin-top: 4rem;
+				margin-bottom: 4rem;
+			}
+
+			.form-controlrs{
+				border-radius: 40px;
+				width: 100%;
+				padding: 1.5rem 1.5em;
+				font-size: 1rem;
+				font-weight: 400;
+				border:1px solid #ced4da00;
+				box-shadow: 0 10px 30px hsl(0deg 0% 0% / 20%);
+				background-color: #f2f2f2;
+				object-fit: contain;
+			}
+			.footer{
+    			width: 100%;
+                background:#404040;
+                color: white;
+				padding-top: 3rem;
+				bottom: 0;  
+            }
+
+            .footer__logo{
+                padding: 10px;
+            }
+
+            .footer__contact{
+                border-left: solid 0.5px #615d5d;
+                text-align: center;
+            }
+
+            .footer__copyright{
+                border-right: solid 0.5px #615d5d;
+                text-align: center;
+                justify-content: center;
+                padding-top: 60px;
+            }
+            
+            .footer__discours{
+                text-align: center;
+
+            }
+
+			.custom-control-label{ /* ajout pour mettre en noir la couleur du remember me */
+				color: black;
+				
+			}
+
+            .login{
+                background: lightgray;
+                padding:2rem;
+                text-align: center;
+
+            }
+            .login___logo{
+                width: 85px;
+                padding: 20px;
+                justify-content: center;
+                margin-bottom: 1rem;
+                
+            }
+
+
+            .login__cart{
+                background: #FFFFFF;
+                width: 20rem;
+                margin-top: 6rem;
+				margin-bottom: 6rem;
+            /*	border: solid 1px #3a3a3a; */
+                border-radius: 35px;
+				box-shadow: 0 25px 50px 0 rgb(0 0 0 / 30%);
+                padding: 3rem;
+                color: white;
+            }
+
+            .login__button{
+                background-color: #3C3C3C;
+                color: white;
+                border: solid 0.5px white;
+                border-radius: 60px;
+
+            }
+
+			.register{
+				border-radius: 35px !important;
+				border: solid 2px #F7F7F7 !important;
+				background: #FFFFFF;
+				padding:2rem;
+				text-align: center;
+				width: 400px;
+   				box-shadow: 0 25px 50px 0 rgb(0 0 0 / 30%);
+    			margin: 100px auto;
+			}
+
+			.register input{
+				border: solid 3px black !important;
+				border-radius: 35px !important;
+				background-color: white !important;
+				margin-bottom: 3rem;
+			}
+
+			.register___logo{
+				width: 100px;
+				padding: 20px;
+				justify-content: center;
+				margin-bottom: 1rem;
+			}
+
+			.col-sm{
+				text-align: center;
+			}
+
+			figcaption{
+				text-align: center;
+				color: white;
+
+			}
+			.container-fluid{
+				background-color: black;
+				height: 7rem;
+				display: flex;
+  				justify-content: center;
+				align-items: center;
+				
+				
+			}
+
+			.container-fluid1{
+				justify-content: center;
+			}
+
+			.container-fluid2{
+				margin-top: 60px;
+			}
+
+			.accordion{
+				margin-top:50px;
+			}
+
+			.accordion-faq{
+				margin-top:50px;
+				margin-bottom:200px;
+			}
+
+			.designform {
+				background-color: white;
+				box-shadow: 1rem 1rem 1rem lightgray;
+				margin-top: 2rem;
+				padding: 2rem;		
+				border-radius:60px;	
+			}
+
+			.designform input {
+				outline: none;
+				border: none;
+				background: #F2F2F2;
+				border-radius: 40px;
+				text-align: center;
+				width: 32rem;
+   				height: 3rem;
+
+			}
+
+			.list-inline{
+				margin-top:2rem;
+			}
+
+			.list-inline-item:not(:last-child){
+				margin-right:2rem;
+			}
+
+			textarea:focus, input:focus{
+    		outline: none;
+			}
+
+			.btn{
+				border-radius: 40px;
+				margin-top: 20px;
+				background: #f2f2f2;
+				color: black;
+			}
+
+			.form-control{
+				border-radius: 20px;
+				object-fit: contain;
+			}
+
+			.bgvid {
+  				position: fixed;
+  				width: 400px; height: 400px;
+  				background: url(polina.jpg) no-repeat;
+  				background-size: cover;
+			}
+
+			.img-index{
+				object-fit: contain;
+				width:50%; 
+				height:50%;
+			}
+
+			.img-indexpro{
+				object-fit: contain;
+				width:25%; 
+				height:25%;
+			}
+
+			.imgtochange{
+				width: 100%;
+    			height: 70%;
+    			object-fit: contain;
+			}
+
+			.imgprice{
+				width: 300px;
+				/* height: 300px; */
+				margin-bottom: 100px;
+				object-fit: contain;
+			}
+
+			.carteanim{
+				width: 100%;
+    			height: 100%;
+   				object-fit: contain;
+			}
+
+			.alert {
+    			margin-bottom: 0;
+			}
+
+			.my-1{
+				border-radius: 10px;
+				text-align: center;
+				font-family:  "Manrope";
+			}
+
+			.popover
+  			{
+      			width: 100%;
+				max-width: 800px;
+			}
+
+			.require
+			{
+			border:1px solid #FF0000;
+			background-color: #cbd9ed;
+			}
