@@ -20,6 +20,68 @@ if (isset($_GET['card_id'])) {
     // ID param exists, edit an existing account
     $page = 'Edit';
     if (isset($_POST['submit'])) {
+        
+
+    $id = $_GET['card_id'];
+
+         // We grab the core file
+  $file = $_FILES['file'];
+
+  $fileName = $_FILES['file']['name'];
+  $fileTmpName = $_FILES['file']['tmp_name'];
+  $fileSize = $_FILES['file']['size'];
+  $fileError = $_FILES['file']['error'];
+  $fileType = $_FILES['file']['type'];
+  // We could also have shortened this by writing:
+  // $fileName = $file['name'];
+  // Since we grabbed the core file at the start...
+
+  // Here we get the file extension of the uploaded file
+  $fileExt = explode('.', $fileName);
+  $fileActualExt = strtolower(end($fileExt));
+
+  // Here WE decide which file types we will allow
+  $allowed = array('jpg', 'jpeg', 'png', 'pdf');
+
+  // Now we check if the file is an allowed file type
+  if (in_array($fileActualExt, $allowed)) {
+    // Here we check for upload errors
+    if ($fileError === 0) {
+      // Here we check for file size
+      if ($fileSize < 1000000) {
+        // Here we create a new unique name for the file that matches the user
+        $fileNameNew = "profile" . $id . "." . $fileActualExt;
+        // Here we create the path the file should get uploaded to
+        $fileDestination = 'uploads/' . $fileNameNew;
+        // Now we upload the file!
+        move_uploaded_file($fileTmpName, $fileDestination);
+        // And now we update the profile image in the database to the new image
+    // $sql = "UPDATE profileimg SET status=0 WHERE userid='$id'";
+    //  $result = mysqli_query($conn, $sql);
+   // $stmt = $pdo->prepare('UPDATE `profileimg` SET `status` = 0  WHERE `profileimg`.`card_id` = ?;');
+
+   // $stmt->execute([ $_POST['status'], $_GET['card_id'] ]);
+
+
+
+        // And send the user back to the front page
+        header("Location: index.php?upload=success");
+      }
+      else {
+        echo "Your file is too big!";
+      }
+    }
+    else {
+      echo "There was an error uploading your file!";
+    }
+  }
+  else {
+    echo "You cannot upload files of this type!";
+  }
+
+
+
+
         // Update the account
        // $stmt = $pdo->prepare('UPDATE vcar SET name = ?, lastname = ?, email = ?, number = ?, entreprise = ?, role = ?, adress = ?, WHERE id = ?');
         $stmt = $pdo->prepare('UPDATE `vcar` SET `Nom` = ?, `Prénom` = ?, `E-mail` = ?, `NumPortable` = ?, `NumFix` = ?, `Poste` = ?, `Entreprise` = ?, `Adresse` = ?  WHERE `vcar`.`card_id` = ?;');
@@ -48,7 +110,29 @@ if (isset($_GET['card_id'])) {
         exit;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 include './header.php';
+
+
+
+
+
+
+
+
+
+
 
 ?>
 
@@ -56,7 +140,15 @@ include './header.php';
 <h2><?=$page?> Account</h2>
 
 <div style="margin:10rem;" class="designform">
-    <form action="" method="post" class="form responsive-width-100">
+
+  
+
+    <form action="" method="post" class="form responsive-width-100" enctype="multipart/form-data">
+
+                    <div style="margin-top:3rem;" class="input-group mb-3 justify-content-center">
+                      <input type="file" name="file">
+                    </div>
+
 
                     <div style="margin-top:3rem;" class="input-group mb-3 justify-content-center">
                         <input style="margin-left:3rem;" class="login__input form-control input_user" type="text" id="Nom" name="Nom" placeholder="Nom" value="<?=$card['Nom']?>" >
