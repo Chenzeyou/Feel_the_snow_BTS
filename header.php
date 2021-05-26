@@ -10,32 +10,107 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 		<link href="style.css" rel="stylesheet" type="text/css">
 
-
-		<style>
-			/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-			@media screen and (max-width: 600px) {
-			.topnav a:not(:first-child) {display: none;}
-			.topnav a.icon {
-				float: right;
+	<style>
+					.cart h1 {
 				display: block;
-			}
-			}
+				font-weight: normal;
+				margin: 0;
+				padding: 40px 0;
+				font-size: 24px;
+				text-align: center;
+				width: 100%;
+			  }
+			  
+			   .cart table {
+				width: 100%;
+			  }
+			  
+			   .cart table thead td {
+				padding: 30px 0;
+				border-bottom: 1px solid #EEEEEE;
+			  }
+			  
+			   .cart table thead td:last-child {
+				text-align: right;
+			  }
+			  
+			   .cart table tbody td {
+				padding: 20px 0;
+				border-bottom: 1px solid #EEEEEE;
+			  }
+			  
+			   .cart table tbody td:last-child {
+				text-align: right;
+			  }
+			  
+			   .cart table .img {
+				width: 80px;
+			  }
+			  
+			   .cart table .remove {
+				color: #777777;
+				font-size: 12px;
+				padding-top: 3px;
+			  }
+			  
+			   .cart table .remove:hover {
+				text-decoration: underline;
+			  }
+			  
+			   .cart table .price {
+				color: #999999;
+			  }
+			  
+			   .cart table a {
+				text-decoration: none;
+				color: #555555;
+			  }
+			  
+			   .cart table input[type="number"] {
+				width: 68px;
+				padding: 10px;
+				border: 1px solid #ccc;
+				color: #555555;
+				border-radius: 5px;
+			  }
+			  
+			   .cart .subtotal {
+				text-align: right;
+				padding: 40px 0;
+			  }
+			  
+			   .cart .subtotal .text {
+				padding-right: 40px;
+				font-size: 18px;
+			  }
+			  
+			   .cart .subtotal .price {
+				font-size: 18px;
+				color: #999999;
+			  }
+			  
+			   .cart .buttons {
+				text-align: right;
+				padding-bottom: 40px;
+			  }
+			  
+			   .cart .buttons input[type="submit"] {
+				margin: 0 0 5px 5px;
+				padding: 12px 20px;
+				border: 0;
+				background: #4e5c70;
+				color: #FFFFFF;
+				font-size: 14px;
+				font-weight: bold;
+				cursor: pointer;
+				border-radius: 5px;
+			  }
+			  
+			   .cart .buttons input[type="submit"]:hover {
+				background: #434f61;
+			  }
+	</style>
 
-			/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-			@media screen and (max-width: 600px) {
-			.topnav.responsive {position: relative;}
-			.topnav.responsive a.icon {
-				position: absolute;
-				right: 0;
-				top: 0;
-			}
-			.topnav.responsive a {
-				float: none;
-				display: block;
-				text-align: left;
-			}
-			}
-		</style>
 
 	</head>
 	<body>
@@ -48,92 +123,48 @@
 	
 	
 	<!-- ici se trouve la navbar -->
-	<nav class="navbar navbar-expand-md navigation topnav ">
+	<nav class="navbar navbar-expand-md navigation ">
 
-		<div class="navbar-collapse  w-100 order-2 ">
-					
-		
+				<div class="navbar-collapse  w-100 order-2 ">
 					<li class="nav-item">
 						<a style="margin-left:1rem;" class="navbar-brand" href="index.php"><img src="./images/Logo_White.png" width="20%" /></a>
 					</li>
-
 					<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="cartedevisite.php">Carte de visite</a>
 					</li>
-
 					<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="carte_rs.php">Carte de réseaux sociaux</a>
 					</li>
-
 					<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="comingsoon.php">Carte Immobilier</a>
 					</li>
-
 					<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="comingsoon.php">Carte Restaurant</a>
 					</li>
-
 					<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="comingsoon.php">Carte Etudiant</a>
 					</li>
-
 					<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="assistance.php">Assistance</a>
 					</li>
-
-					<li>
-						<a id="cart-popover" class="btn" data-placement="bottom" title="Shopping Cart">
-						<span class="glyphicon glyphicon-shopping-cart"></span>
-						<span class="badge"></span>
-						<span class="total_price">€ 0.00</span>
-						</a>
-					</li>
-
-					<div id="popover_content_wrapper" style="display: none">
-						<span id="cart_details"></span>
-						<div style= "text-align:right">
-							<a href="order_process.php" class="btn btn-primary" id="checkout-button">
-								<span id="checkout-submit" class="glyphicon glyphicon-shopping-cart"></span> Check out
-							</a>
-							<a href="#" class="btn btn-default" id="clear_cart">
-								<span class="glyphicon glyphicon-trash"></span> Clear
-							</a>
-						</div>
-					</div>
-
-
-
-
-
-
-
-
-
-
 					<? if ($_SESSION['loggedin'] == TRUE) :?>
-						
 						<li class="nav-item">
 									<a class="nav-link active" aria-current="page" href="admin/index.php"> Mes cartes</a>
-						</li>
-
-					<? else: ?>
-
+						</li>				
 						<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="login.php"><i class="far fa-user">
-									
-									</i></a>
-									
+							<a href="logout.php"><i class="fas fa-sign-out-alt"></i></a> 
+						</li>
+					<? else: ?>
+						<li class="nav-item">
+									<a class="nav-link active" aria-current="page" href="login.php"><i class="far fa-user"></i></a>
 						</li>
 					<?endif;?>
+						<li class="nav-item">
+									<a class="nav-link active" aria-current="page" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
+						</li>
 
-					<a href="logout.php"><i class="fas fa-sign-out-alt"></i></a> 
-					
-					<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-   			 <i class="fa fa-bars"></i>
-  		</a>
-		</div>  
-		
-		
+
+				</div>  
 				
 	</nav>
 
@@ -146,13 +177,3 @@
 
 
 
-<script>
-	function myFunction() {
-	var x = document.getElementById("myTopnav");
-	if (x.className === "topnav") {
-		x.className += " responsive";
-	} else {
-		x.className = "topnav";
-	}
-	}
-</script>

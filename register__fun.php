@@ -39,14 +39,15 @@ if ($account) {
 	$stmt = $pdo->prepare('INSERT INTO accounts (username, password, email, activation_code) VALUES (?, ?, ?, ?)');
 	// We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
 	$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-	$uniqid = account_activation ? uniqid() : 'activated';
-	$stmt->execute([ $_POST['username'], $password, $_POST['email'], $uniqid ]);
-	if (account_activation) {
+	//$uniqid = account_activation ? uniqid() : 'activated';
+	//$stmt->execute([ $_POST['username'], $password, $_POST['email'], $uniqid ]);
+/*	if (account_activation) {
 		// Account activation required, send the user the activation email with the "send_activation_email" function from the "main.php" file
 		send_activation_email($_POST['email'], $uniqid);
 		echo 'Please check your email to activate your account!';
 	} else {
 		echo 'You have successfully registered, you can now login!';
-	}
+	}*/
+	echo 'You have successfully registered, you can now login!';
 }
 ?>
